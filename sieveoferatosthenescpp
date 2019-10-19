@@ -1,0 +1,14 @@
+void Sieveoferatosthenes(int n)
+{
+    bool p[n+1];
+    memset(p, true, sizeof(p));
+    for (int a=2; a*a<=n; a++)
+    {
+        if (p[a] == true)
+        {
+            for (int i=a*a; i<=n; i += a)
+                p[i] = false; } }
+    for (int a=2; a<=n; a++)
+       if (p[a])
+          cout << a << " ";
+}
